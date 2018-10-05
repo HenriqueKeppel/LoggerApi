@@ -11,16 +11,8 @@ namespace LoggerApi.Controllers
     [Route("LoggerApi/v1/[controller]")]
     public class LoggerController : Controller
     {
-        // POST api/values
-        [HttpPost]
-        public async Task<LoggerPost> Post([FromBody]LoggerModel model)
-        {
-            LoggerPost result = new LoggerPost(200);
-            return result;
-        }
-
-        [HttpPost("PagamentoLogger")]
-        public async Task<LoggerPost> Post([FromBody]LoggerPagamentoModel request)
+        [HttpPost("Pagamento")]
+        public async Task<LoggerPost> Post([FromBody]PagamentoModel request)
         {
             LoggerPost result = new LoggerPost(200);
             return result;
