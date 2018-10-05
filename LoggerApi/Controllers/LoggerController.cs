@@ -13,7 +13,14 @@ namespace LoggerApi.Controllers
     {
         // POST api/values
         [HttpPost]
-        public LoggerPost Post([FromBody]LoggerModel model)
+        public async Task<LoggerPost> Post([FromBody]LoggerModel model)
+        {
+            LoggerPost result = new LoggerPost(200);
+            return result;
+        }
+
+        [HttpPost("PagamentoLogger")]
+        public async Task<LoggerPost> Post([FromBody]LoggerPagamentoModel request)
         {
             LoggerPost result = new LoggerPost(200);
             return result;
